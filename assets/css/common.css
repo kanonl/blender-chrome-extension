@@ -1,0 +1,26 @@
+@font-face {
+    font-family: Industrywf;
+    src: url("Industry-Bold-webfont.woff2") format("woff2"),
+    url("Industry-Bold-webfont.woff") format("woff");
+
+    font-weight: 700;
+    font-style: bold;
+}
+
+@font-face {
+    font-family: Industrywf;
+    src: url("Industry-Demi-webfont.woff2") format("woff2"),
+    url("Industry-Demi-webfont.woff") format("woff");
+
+    font-weight: 500;
+    font-style: 500;
+}
+
+@font-face {
+    font-family: Industrywf;
+    src: url("Industry-Medium-webfont.woff2") format("woff2"),
+    url("Industry-Medium-webfont.woff") format("woff");
+
+    font-weight: 400;
+    font-style: normal;
+}

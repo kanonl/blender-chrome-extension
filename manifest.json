@@ -1,0 +1,29 @@
+{
+    "manifest_version": 2,
+    "name": "blender",
+    "version": "0.0.100",
+    "description": "blender",
+    "icons": {
+        "48": "assets/images/blender-48.png",
+        "96": "assets/images/blender-96.png",
+        "128": "assets/images/blender-128.png"
+    },
+    "author": "Kanon Lo",
+    "browser_action": {
+        "default_title": "blender",
+        "default_popup": "assets/views/popup.html"
+    },
+    "options_page": "assets/views/options.html",
+    "background": {
+        "scripts": ["assets/js/background.js"],
+        "persistent": false
+    },
+    "permissions": [
+        "alarms",
+        "notifications",
+        "storage",
+        "https://mixer.com/",
+        "https://uploads.mixer.com/",
+        "https://uploads.beam.pro/"
+    ]
+}

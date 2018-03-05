@@ -1,0 +1,23 @@
+body {
+    font-family: "Industrywf", sans-serif;
+}
+
+legend {
+    font-size: 48px;
+    color: #1FBAED;
+}
+
+.btn {
+    background-color: #03214F;
+    color: white;
+}
+
+.alert{
+    text-align: center;
+    margin-top: 1rem;
+}
+
+label {
+    color: #03214F;
+    font-weight: bold;
+}
