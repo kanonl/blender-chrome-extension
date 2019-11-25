@@ -1,5 +1,7 @@
 (function () {
 
+    "use strict";
+
     chrome.storage.sync.get(["ChannelAdvanced", "username", "id"], items => {
 
         if (!items.username) chrome.runtime.openOptionsPage(() => {});
