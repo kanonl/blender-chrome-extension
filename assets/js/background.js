@@ -84,27 +84,30 @@
         const url = new URL(blender.BLENDER.Url);
         url.pathname = `${blender.BLENDER.Endpoints.users}/${mixer.id}/follows`;
         url.search = new URLSearchParams({
-            "limit": 50,
+            "limit": 25,
             "where": "online:eq:true",
             "noCount": false,
-            "fields": "name,user,type,viewersCurrent,numFollowers,audience,featured"
+            "fields": "id,name,user,type,viewersCurrent,numFollowers,audience,featured"
         });
 
         let ChannelAdvanced = [];
+        let notificationCount = 0;
 
         fetch(url.toString()).then(response => response.json()).then(json => {
             json.forEach(element => {
                 ChannelAdvanced.push({
+                    "id": element.id,
                     "name": element.name,
                     "avatarUrl": element.user.avatarUrl,
                     "username": element.user.username,
-                    "type": element.type.name,
+                    "type": (element.type) ? element.type.name : "",
                     "viewersCurrent": element.viewersCurrent,
                     "numFollowers": element.numFollowers,
                     "audience": element.audience,
                     "featured": element.featured,
                     "url": `https://mixer.com/${element.user.username}`
                 });
+
             });
 
             setBadge(ChannelAdvanced.length);
@@ -121,7 +124,10 @@
                         }
                     });
 
-                    if (notify) createNotification(newchannel);
+                    if (notify && (notificationCount < 10)) {
+                        createNotification(newchannel);
+                        notificationCount++;
+                    }
                 });
 
                 chrome.storage.sync.set({
@@ -152,12 +158,13 @@
         let d = new Date();
 
         let notificationOptions = {
-            type: blender.NOTIFICATIONS.TYPE.Basic,
+            type: blender.NOTIFICATIONS.TYPE.Image,
             iconUrl: stream.avatarUrl,
             title: stream.username,
             message: stream.name,
             contextMessage: stream.type,
             eventTime: d.getTime(),
+            imageUrl: `https://thumbs.mixer.com/channel/${stream.id}.small.jpg`,
             buttons: [
                 {
                     "title": `${stream.viewersCurrent} viewers`,

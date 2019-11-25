@@ -41,3 +41,11 @@ div#blender {
 hr {
     margin: 0.5rem 0;
 }
+
+td.align-top {
+    width: 128px;
+}
+
+table {
+    margin-bottom: 0 !important;
+}
