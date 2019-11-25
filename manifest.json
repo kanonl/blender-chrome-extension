@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "blender",
     "version": "0.0.100",
-    "description": "blender",
+    "description": "Mixer is the only next gen streaming service that offers viewers real-time influence and participation in live game streams.",
     "icons": {
         "48": "assets/images/blender-48.png",
         "96": "assets/images/blender-96.png",
