@@ -8,8 +8,13 @@
                 <div class="username">{{ username }}</div>
                 <div class="type">{{ type }}</div>
                 <div class="name">{{ name }}</div>
+                <hr>
+                <div class="viewers">
+                    <ul>
+                        <li>{{ viewersCurrent }} viewers</li><li>{{ numFollowers }} followers</li><li>{{ audience }}</li>
+                    </ul>
+                </div>
             </td>
-            <td hidden>{{ viewersCurrent }}</td>
         </tr>
         {{/each}}
     </tbody>

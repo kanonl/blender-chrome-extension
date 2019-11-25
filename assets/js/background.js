@@ -1,5 +1,7 @@
 (function () {
 
+    "use strict";
+
     const blender = {
         "ALARMS": {
             "Name": "blender",
@@ -85,7 +87,7 @@
             "limit": 50,
             "where": "online:eq:true",
             "noCount": false,
-            "fields": "name,user,type,viewersCurrent"
+            "fields": "name,user,type,viewersCurrent,numFollowers,audience,featured"
         });
 
         let ChannelAdvanced = [];
@@ -98,6 +100,9 @@
                     "username": element.user.username,
                     "type": element.type.name,
                     "viewersCurrent": element.viewersCurrent,
+                    "numFollowers": element.numFollowers,
+                    "audience": element.audience,
+                    "featured": element.featured,
                     "url": `https://mixer.com/${element.user.username}`
                 });
             });
