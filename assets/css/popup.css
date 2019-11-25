@@ -4,3 +4,14 @@ div#blender {
     width: 320px;
     min-width: 256px;
 }
+
+.username {
+    color: #03214F;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.type {
+    text-transform: uppercase;
+    color: #1FBAED;
+}

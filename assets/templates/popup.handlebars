@@ -1,15 +1,15 @@
 <table class="table table-sm table-striped">
     <tbody>
-        {{#each streamList}}
+        {{#each ChannelAdvanced}}
         <tr>
             <td class="align-top">
-                <a href="{{ url }}"><img class="logo img-thumbnail" src="{{ logo }}" alt="{{ name }}" data-url="{{ url }}" width="128"></a></td>
+                <a href="{{ url }}"><img class="avatarUrl img-thumbnail" src="{{ avatarUrl }}" alt="{{ username }}" data-url="{{ url }}" width="128"></a></td>
             <td>
-                <div class="display_name">{{ display_name }}</div>
-                <div class="game">{{ game }}</div>
-                <div class="status">{{ status }}</div>
+                <div class="username">{{ username }}</div>
+                <div class="type">{{ type }}</div>
+                <div class="name">{{ name }}</div>
             </td>
-            <td hidden>{{ viewers }}</td>
+            <td hidden>{{ viewersCurrent }}</td>
         </tr>
         {{/each}}
     </tbody>
