@@ -22,8 +22,7 @@
         "alarms",
         "notifications",
         "storage",
-        "https://mixer.com/",
-        "https://uploads.mixer.com/",
+        "https://*.mixer.com/",
         "https://uploads.beam.pro/"
     ]
 }
