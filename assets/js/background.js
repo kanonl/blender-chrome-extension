@@ -47,7 +47,7 @@
                 if (items.username) {
                     fetchChannels(items);
                 } else {
-                    chrome.runtime.openOptionsPage(() => {});
+                    chrome.runtime.openOptionsPage(() => { });
                 }
             });
         }
@@ -107,22 +107,13 @@
                     "featured": element.featured,
                     "url": `https://mixer.com/${element.user.username}`
                 });
-
             });
 
             setBadge(ChannelAdvanced.length);
 
-            chrome.storage.sync.get({
-                "ChannelAdvanced": []
-            }, items => {
+            chrome.storage.sync.get({ "ChannelAdvanced": [] }, items => {
                 ChannelAdvanced.forEach(newchannel => {
-                    let notify = true;
-
-                    items.ChannelAdvanced.forEach(channel => {
-                        if (channel.username === newchannel.username) {
-                            notify = false;
-                        }
-                    });
+                    let notify = !items.ChannelAdvanced.some(x => x.username === newchannel.username);
 
                     if (notify && (notificationCount < 10)) {
                         createNotification(newchannel);

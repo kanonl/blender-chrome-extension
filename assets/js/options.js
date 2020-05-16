@@ -3,7 +3,6 @@
     "use strict";
 
     chrome.storage.sync.get(null, items => {
-        console.log(items);
         if (items.username) document.querySelector("#user").value = items.username;
     });
 
